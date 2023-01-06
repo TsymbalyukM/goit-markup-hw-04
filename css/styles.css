@@ -6,6 +6,10 @@
   --light-color: #f4f4fd;
   --pressed-state-color: #404bbf;
   --accent-color: #e7e9fc;
+  --customers-color: #8e8f99;
+  --footer-icon: rgba(255, 255, 255, 0.1);
+  --footer-hover: #31d0aa;
+  --portfolio-shadow: rgba(46, 47, 66, 0.08);
 }
 /*---------------Скидання стилів---------------*/
 p,
@@ -135,10 +139,17 @@ body {
 }
 /*------------------HERO------------------*/
 .hero {
+  max-width: 1440px;
+  height: 600px;
   background-color: var(--title-color);
   text-align: center;
   padding: 188px 0;
   margin: 0 auto;
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url('../images/people-office.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .hero-title {
   width: 496px;
@@ -173,21 +184,31 @@ body {
 }
 /*------------------Цінності компанії------------------*/
 .values {
-  /* width: 1128px;
-  padding: 95px 95px 95px 95px; */
   padding-top: 120px;
   padding-bottom: 120px;
 }
+
 .values-list {
   display: flex;
   margin-right: 24px;
 }
 .values-item {
   margin-right: 24px;
+  width: 264px;
 }
 .values-item:last-child {
   margin-right: 0;
 }
+.values-icon-box {
+  display: flex;
+  justify-content: center;
+  width: 264px;
+  height: 112px;
+  border-radius: 4px;
+  background-color: var(--light-color);
+  align-items: center;
+}
+
 .values-title {
   font-weight: 500;
   font-size: 20px;
@@ -195,6 +216,7 @@ body {
   letter-spacing: 0.02em;
   color: var(--title-color);
   margin-bottom: 8px;
+  margin-top: 8px;
 }
 .values-item-text {
   width: 264px;
@@ -270,6 +292,70 @@ body {
   text-align: center;
   letter-spacing: 0.02em;
   color: var(--text-color);
+  margin-bottom: 8px;
+}
+.icon-list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.icon-item {
+  width: 40px;
+  height: 40px;
+}
+.icon-link {
+  width: 100%;
+  height: 100%;
+  background-color: var(--logo-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-link:hover,
+.icon-link:focus {
+  background-color: var(--pressed-state-color);
+}
+
+/*------------------КЛІЄНТИ------------------*/
+.customers {
+  padding-top: 130px;
+  padding-bottom: 120px;
+}
+.container {
+}
+.customers-title {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.customers-list {
+  display: flex;
+  gap: 24px;
+}
+.customers-item {
+  width: calc((100% - 120px) / 6);
+  height: 88px;
+}
+.customers-link {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--customers-color);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.customers-link:hover,
+.customers-link:focus {
+  border-color: var(--pressed-state-color);
+}
+.customers-link:hover .customers-icon,
+.customers-link:focus .customers-icon {
+  fill: var(--pressed-state-color);
+}
+.customers-icon {
+  fill: var(--customers-color);
 }
 /*------------------FOOTER------------------*/
 .footer {
@@ -304,6 +390,43 @@ body {
   letter-spacing: 0.02em;
   color: var(--accent-color);
   margin-top: 16px;
+  margin-right: 120px;
+}
+
+.footer > .container {
+  display: flex;
+}
+.footer-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--background-color);
+  margin-bottom: 16px;
+}
+.footer-list {
+  display: flex;
+  gap: 16px;
+}
+.footer-item {
+  width: 40px;
+  height: 40px;
+}
+.footer-link {
+  width: 100%;
+  height: 100%;
+  background-color: var(--footer-icon);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-link:hover,
+.footer-link:focus {
+  background-color: var(--footer-hover);
+}
+
+.icon-footer {
 }
 /*------------------PORTFOLIO------------------*/
 .portfolio {
@@ -313,7 +436,6 @@ body {
 .portfolio-list {
   display: flex;
   justify-content: center;
-  /* padding-top: 96px; */
   margin-bottom: 72px;
 }
 .portfolio-item {
@@ -329,10 +451,8 @@ body {
   letter-spacing: 0.04em;
   color: var(--logo-color);
   background-color: var(--light-color);
-  border: none;
+  border: 1px solid var(--accent-color);
   cursor: pointer;
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   padding: 12px 24px;
 }
@@ -343,9 +463,12 @@ body {
 .portfolio-item-btn:focus {
   color: var(--background-color);
   background-color: var(--pressed-state-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  border: none;
 }
 .gallery {
-  /* padding-bottom: 120px; */
   display: flex;
   flex-wrap: wrap;
   column-gap: 24px;
@@ -353,16 +476,25 @@ body {
 }
 .gallery-item {
   width: calc((100% - 48px) / 3);
+  box-shadow: 0px 1px 6px var(--portfolio-shadow);
+  border: 1px solid var(--accent-color);
+  cursor: pointer;
+}
+.gallery-item:hover,
+.gallery-item:focus {
+  border: 0.5px solid var(--light-color);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .gallery-item-box {
   padding-top: 32px;
   padding-bottom: 32px;
   padding-left: 16px;
   padding-right: 95px;
-  border: 1px solid var(--accent-color);
   border-top: transparent;
 }
 .gallery-item-title {
+  width: 360px;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
